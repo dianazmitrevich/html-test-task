@@ -1,0 +1,33 @@
+.inner-banner {
+    .banner__head {
+        display: none;
+        padding-top: 12px;
+        padding-bottom: 14px;
+
+        @include l-tablet {
+            display: block;
+        }
+
+        @include sm-tablet {
+            padding-top: 16px;
+            padding-bottom: 10px;
+        }
+
+        @include mobile {
+            padding-top: 13px;
+            padding-bottom: 25px;
+        }
+
+        .head-wrap {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .banner__title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}

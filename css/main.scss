@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+$base-font-size: 10px;
+$base-line-height: 1.15;
+$font: 'PT Sans', sans-serif;
+$accent-color: #FBFF3D;
+$dark-color: #333333;
+$light-color: #FFFFFF;
+$transition: all ease-in-out .2s;
+
+@mixin mobile {
+   @media (max-width: 596px) {
+      @content;
+   }
+}
+
+@mixin sm-tablet {
+   @media (max-width: 880px) {
+      @content;
+   }
+}
+
+@mixin l-tablet {
+   @media (max-width: 1139px) {
+      @content;
+   }
+}
+
+@mixin desktop {
+   @media (max-width: 1479px) {
+      @content;
+   }
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+svg {
+   pointer-events: none;
+}
+
+html {
+   font-size: $base-font-size;
+   line-height: $base-line-height;
+   scroll-behavior: smooth;
+
+   @include l-tablet {
+      font-size: 8px;
+   }
+
+   @include sm-tablet {
+      font-size: 6px;
+   }
+}
+
+::-webkit-scrollbar {
+   display: none;
+}
+
+::-webkit-scrollbar-thumb {
+   display: none;
+}
+
+body {
+   font-size: 1.6rem;
+   font-family: $font;
+   line-height: 1.15;
+   font-weight: 400;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   background: #FCFCFD;
+}
+
+.container {
+   width: 100%;
+   padding: 0 20px;
+   margin: 0 auto;
+   position: relative;
+}
+
+@media (min-width: 1156px) {
+   .container {
+      max-width: 1168px;
+   }
+}
+
+@media (min-width: 1368px) {
+   .container {
+      max-width: 1920px;
+      padding: 0 86px;
+   }
+}
+
+a {
+   text-decoration: none;
+   color: unset;
+   cursor: pointer;
+}
+
+.g-wrap {
+   min-width: 320px;
+   margin: 0 auto;
+}
+
+.outer-bg {
+   display: flex;
+   flex-direction: column;
+   max-width: 1920px;
+   margin: 0 auto;
+   overflow: hidden;
+}
+
+main {
+   padding-top: 102px;
+
+   @include l-tablet {
+      padding-top: 62.7px;
+   }
+
+   @include mobile {
+      padding-top: 72px;
+   }
+}
+
+.stop-scroll {
+   overflow: hidden !important;
+
+   ::-webkit-scrollbar {
+      width: 0;
+   }
+}
+
+.show {
+   opacity: 1 !important;
+   visibility: visible !important;
+   display: block !important;
+}
+
+.overflow-hidden {
+   overflow: hidden
+}
+
+.link-underline {
+   transition: $transition;
+   position: relative;
+
+   &:hover {
+      color: $accent-color;
+
+      &:after {
+         background: $accent-color;
+      }
+   }
+
+   &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: $light-color;
+      bottom: 0;
+      left: 0;
+      transition: $transition;
+   }
+}
+
+.link-main {
+
+   a,
+   path {
+      transition: $transition;
+   }
+
+   &:hover {
+      a {
+         color: $accent-color;
+      }
+
+      path {
+         fill: $accent-color;
+      }
+   }
+}
+
+@import "chunk/header";
+@import "chunk/main-cards";
+@import "chunk/filter";
+@import "chunk/banner";
+@import "chunk/popups";

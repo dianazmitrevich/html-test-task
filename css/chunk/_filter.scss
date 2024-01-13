@@ -1,0 +1,154 @@
+.filter {
+    .item-dropdown {
+        border: 1px solid #D0D0D0;
+        width: 264px;
+        padding: 14px 17px 13px;
+        transition: $transition;
+        margin-right: 14px;
+        cursor: pointer;
+
+        &:has(>.dropdown-opened) {
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .item-range {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+
+        .range-sm-text {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: -121px;
+                transform: translateY(-50%);
+                content: 'от';
+                font-size: 16px;
+                pointer-events: none;
+            }
+
+            &:nth-of-type(2) {
+                &:before {
+                    content: 'до';
+                    left: -132px;
+                }
+            }
+        }
+
+        .filter__number {
+            padding: 13px 10px 13px 37px;
+            text-align: right;
+            width: 132px;
+            border: 1px solid #D0D0D0;
+            color: $dark-color;
+            font-weight: 700;
+            font-family: $font;
+            outline: none;
+            font-size: 16px;
+
+            margin-left: 14px;
+
+            &:nth-of-type(2) {
+                border-left: 0;
+                margin-left: 0;
+                margin-right: 9px;
+            }
+
+            &::placeholder {
+                color: $dark-color;
+                font-weight: 700;
+                font-size: 16px;
+                font-family: $font;
+            }
+        }
+    }
+
+    .filter__item {
+        position: relative;
+        font-size: 16px;
+        background: $light-color;
+
+        &:nth-of-type(2) {
+            margin-right: 27px;
+        }
+
+        select {
+            position: absolute;
+            visibility: hidden;
+            top: -25px;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 45px;
+            left: -1px;
+            display: none;
+            width: calc(100% + 2px);
+            border: 1px solid #D0D0D0;
+            border-top: 0;
+            z-index: 9999;
+            background: $light-color;
+
+            ul {
+                position: relative;
+                padding-top: 6px;
+                padding-bottom: 10px;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    width: calc(100% - 16px - 16px);
+                    height: 1px;
+                    background: #D0D0D0;
+                    left: 16px;
+                }
+
+                li {
+                    list-style: none;
+                    width: 100%;
+                    padding: 7px 16px;
+                    transition: $transition;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #E8EEFF;
+                    }
+                }
+            }
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            top: 50%;
+            right: 17px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .dropdown-opened {
+            display: block;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+            clip-path: inset(0px -50px -50px -50px);
+        }
+    }
+}
+
+.inner-banner {
+    .filter {
+        padding-top: 25px;
+        padding-bottom: 23px;
+
+        @include l-tablet {
+            display: none;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+    }
+}

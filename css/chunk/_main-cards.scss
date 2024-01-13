@@ -1,0 +1,272 @@
+.main-cards {
+    margin-bottom: 39px;
+
+    .cards__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid #DEDEDE;
+        border-left: 1px solid #DEDEDE;
+        height: fit-content;
+    }
+
+    a:has(.cards__item) {
+        width: calc(100% / 4);
+
+        @include l-tablet {
+            width: calc(100% / 3);
+        }
+
+        @include sm-tablet {
+            width: calc(100% / 2);
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    a:has(.cards__item-featured) {
+        width: calc(100% / 2);
+
+        @include l-tablet {
+            width: calc(100% * 2 / 3);
+        }
+
+        @include sm-tablet {
+            width: 100%;
+        }
+    }
+
+    .cards__item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid #DEDEDE;
+        border-bottom: 1px solid #DEDEDE;
+        padding: 21px 20px 14px;
+        min-height: 358px;
+        transition: $transition;
+        background: transparent;
+        margin-top: -1px;
+        margin-left: -1px;
+
+        &:hover {
+            border-color: #819DEB;
+            background: #E8EEFF;
+        }
+
+        @include l-tablet {
+            padding: 16px 16px 16px 19px;
+        }
+
+        @include sm-tablet {
+            padding: 17px 24px;
+        }
+
+        @include mobile {
+            padding: 18px 23px 17px;
+        }
+
+        .item__col-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 160px;
+
+            @include l-tablet {
+                height: 164px;
+            }
+
+            @include sm-tablet {
+                height: 175px;
+            }
+
+            @include mobile {
+                height: 169px;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .item__col-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: calc(100% - 162px);
+
+            @include l-tablet {
+                height: calc(100% - 166px);
+            }
+
+            @include sm-tablet {
+                height: calc(100% - 177px);
+            }
+
+            @include mobile {
+                height: calc(100% - 171px);
+            }
+        }
+
+        .item__title {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 6px;
+
+            @include l-tablet {
+                font-size: 20px;
+                margin-top: 12px;
+                margin-bottom: 4px;
+            }
+
+            @include sm-tablet {
+                margin-top: 15px;
+                margin-bottom: 2px;
+            }
+
+            @include mobile {
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+        }
+
+        .item__description {
+            color: #979797;
+            font-size: 14px;
+            min-height: 72px;
+            line-height: normal;
+            margin-bottom: 21px;
+
+            @include l-tablet {
+                font-size: 16px;
+            }
+
+            @include sm-tablet {
+                margin-bottom: 15px;
+            }
+        }
+
+        .item__price {
+            border-top: 1px solid #8EACFC;
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include l-tablet {
+                padding-top: 8px;
+            }
+        }
+
+        .price__current {
+            color: #325AC0;
+            font-size: 20px;
+            line-height: normal;
+        }
+
+        .price__cart {
+            path {
+                transition: $transition;
+            }
+
+            &:hover {
+                path {
+                    fill: #1F497B;
+                }
+            }
+        }
+    }
+
+    .cards__item-featured {
+        padding: 21px 20px 16px 21px !important;
+        flex-direction: row;
+
+        &:hover {
+            background: #FFF1F1;
+            border-color: #FF3D3D;
+        }
+
+        @include l-tablet {
+            padding: 15px 31px 17px 19px !important;
+        }
+
+        @include sm-tablet {
+            padding: 25px 24px 21px 21px !important;
+        }
+
+        @include mobile {
+            padding: 18px 18px 16px !important;
+            flex-direction: column;
+        }
+
+        .item__col-image {
+            min-width: calc(50% - 14px);
+            height: 100% !important;
+            align-items: flex-start;
+            margin-right: 26px;
+
+            @include l-tablet {
+                align-items: center;
+            }
+
+            @include mobile {
+                height: 244px !important;
+            }
+        }
+
+        .item__col-text {
+            height: 100%;
+        }
+
+        .item__title {
+            font-size: 20px;
+            margin-top: 6px;
+            margin-bottom: 4px;
+        }
+
+        .item__description {
+            font-size: 16px;
+            min-height: 210px;
+            margin-bottom: 46px;
+
+            @include mobile {
+                min-height: unset;
+                margin-bottom: 57px;
+            }
+        }
+
+        .item__price {
+            position: relative;
+            border-top: 1px solid #FFBCBC;
+
+            .price__old {
+                position: absolute;
+                left: 0;
+                top: -24px;
+                color: #989898;
+                font-size: 16px;
+                line-height: normal;
+                text-decoration: line-through;
+            }
+        }
+
+        .price__current {
+            color: #FF3D3D;
+        }
+
+        .price__cart {
+            &:hover {
+                path {
+                    fill: #C50000;
+                }
+            }
+        }
+    }
+}
