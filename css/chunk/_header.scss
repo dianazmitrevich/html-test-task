@@ -203,6 +203,7 @@
       width: 100%;
       background: #1F497B;
       transition: all ease-in-out .2s;
+      visibility: hidden;
 
       input {
         background: none;
@@ -224,6 +225,7 @@
     .dropdown-opened {
       max-height: 400px;
       opacity: 1;
+      visibility: visible;
     }
 
     .dropdown-wrap {

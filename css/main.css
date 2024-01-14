@@ -329,6 +329,7 @@ main {
   width: 100%;
   background: #1F497B;
   transition: all ease-in-out 0.2s;
+  visibility: hidden;
 }
 .header__mobile .header__col-search-dropdown .dropdown input {
   background: none;
@@ -352,6 +353,7 @@ main {
 .header__mobile .header__col-search-dropdown .dropdown-opened {
   max-height: 400px;
   opacity: 1;
+  visibility: visible;
 }
 .header__mobile .header__col-search-dropdown .dropdown-wrap {
   position: relative;
